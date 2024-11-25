@@ -71,7 +71,7 @@ const Contact = () => {
   
 
     try {
-      const response = await  axios.post(import.meta.env.VITE_BACKEND_URL, formData);
+      const response = await  axios.post(`${import.meta.env.VITE_BACKEND_URL}/send-email`, formData)
       if (response.status ===200) {
             toast.success("Thank you for reaching out to us. We will get back to you shortly.")
             reset();

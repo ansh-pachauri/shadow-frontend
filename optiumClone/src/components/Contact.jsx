@@ -71,7 +71,12 @@ const Contact = () => {
   
 
     try {
-      const response = await  axios.post(`${import.meta.env.VITE_BACKEND_URL}/send-email`, formData)
+      const backendUrl = import.meta.env.VITE_BACKEND_URL?.trim() || 'https://shadow-server-1.onrender.com';
+      const response = await  axios.post(`${backendUrl}/send-email`, formData,{
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
       if (response.status ===200) {
             toast.success("Thank you for reaching out to us. We will get back to you shortly.")
             reset();

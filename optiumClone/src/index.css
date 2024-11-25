@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 768px) {
+    .hide-on-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .hide-on-smallmobile {
+        display: none;
+    }
+}
+
+
+.forheader {
+    position: relative;
+    top: -100%;
+}
+
+.man-card {
+    justify-items: first baseline;
+}
